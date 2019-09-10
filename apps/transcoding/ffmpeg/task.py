@@ -46,18 +46,16 @@ class ffmpegTask(TranscodingTask):
         resolution = video_params.resolution
         resolution = [resolution[0], resolution[1]] if resolution else None
         vc = video_params.codec.value if video_params.codec else None
-        container = transcoding_options.output_container
         extra_data = {
             'track': chunk,
             'targs': {
-                'container': container.value if container is not None else None,
                 'video': {
                     'codec': vc,
                     'bitrate': video_params.bitrate
                 },
                 'resolution': resolution,
                 'frame_rate': video_params.frame_rate,
-                'format': transcoding_options.output_container.value
+                'container': transcoding_options.output_container.value,
             },
             'output_stream': output_stream,
             'command': Commands.TRANSCODE.value[0],
