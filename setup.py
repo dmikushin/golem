@@ -93,6 +93,10 @@ setup(
         (path.normpath('../../golem/apps/dummy/test_data'), [
             path.normpath('apps/dummy/test_data/in.data')
         ]),
+        (path.normpath('../../golem/apps/wasm/test_data/input'), [
+            path.normpath('apps/wasm/test_data/input/test.js'),
+            path.normpath('apps/wasm/test_data/input/test.wasm')
+        ]),
         (path.normpath('../../golem/network/concent/resources/ssl/certs'), [
             path.normpath('golem/network/concent/resources/ssl/certs/test.crt'),
         ]),
